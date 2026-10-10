@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#151c2d">
+<title>VGamer1991's Boredom Emergency Arcade 2.0 — Saveable Edition</title>
+<style>
+:root{color-scheme:dark;--bg:#0c1322;--panel:#172239;--panel2:#1d2b45;--border:#30405b;--text:#f4f7ff;--muted:#b4c0d5;--aqua:#86eadb;--gold:#f9c87b;--rose:#ff9baf;--green:#93e6ac;--shadow:0 15px 50px #03091665}
+*{box-sizing:border-box}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}body{margin:0;background:radial-gradient(ellipse at 7% 5%,#233d64 0,transparent 42%),radial-gradient(ellipse at 97% 85%,#353052 0,transparent 37%),var(--bg);min-height:100vh}
+button,input,select,textarea{font:inherit}button{cursor:pointer;color:var(--text)}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}a{color:var(--aqua)}
+.app{max-width:980px;padding:22px 16px 70px;margin:auto}.eyebrow{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua);font-weight:800}.hero{padding:26px 26px 23px;position:relative;border:1px solid #49627c;border-radius:24px;overflow:hidden;background:linear-gradient(115deg,#273950,#182640 65%,#292746);box-shadow:var(--shadow)}.hero:before{content:"✦";position:absolute;font-size:12rem;color:#ffffff0c;right:7%;top:-80px;pointer-events:none}.hero h1{font-size:clamp(1.9rem,5.5vw,3.2rem);line-height:1.06;max-width:660px;letter-spacing:-.045em;margin:12px 0}.hero p{max-width:690px;color:var(--muted);line-height:1.52;margin:0}.hero footer{margin-top:17px;display:flex;gap:10px;flex-wrap:wrap}.pill{display:inline-flex;padding:6px 10px;background:#102c32;border:1px solid #39716f;border-radius:99px;color:var(--aqua);font-size:.75rem;font-weight:750}.pill.warn{background:#412922;border-color:#86604a;color:var(--gold)}
+.layout{display:grid;grid-template-columns:1.45fr 1fr;gap:16px;margin-top:18px}.panel{background:#172239e8;border:1px solid var(--border);border-radius:20px;padding:19px;box-shadow:var(--shadow)}.panel h2{font-size:1.18rem;margin:0 0 8px}.panel p{color:var(--muted);line-height:1.48}.panel header{display:flex;align-items:center;justify-content:space-between;gap:10px}.main{min-width:0}.right{display:flex;flex-direction:column;gap:16px}.btn{border-radius:13px;padding:11px 14px;background:#253654;border:1px solid #4b6081;font-weight:750;line-height:1.2;transition:filter .15s,transform .15s}.btn:hover:not(:disabled){filter:brightness(1.16)}.btn:active:not(:disabled){transform:translateY(1px)}.btn.primary{background:#98ecdf;color:#0e2832;border-color:#b6fff1}.btn.yellow{background:#f3cb82;color:#33220e;border-color:#ffe3af}.btn.sm{padding:9px 10px;font-size:.83rem}.btn.wide{width:100%}.btn.ghost{background:transparent}.button-row{display:flex;flex-wrap:wrap;gap:8px}.space-top{margin-top:14px}.label{font-size:.8rem;color:var(--muted);font-weight:750}.tiny{font-size:.77rem;color:var(--muted)}.muted{color:var(--muted)}.subtitle{font-size:.88rem;color:var(--muted);line-height:1.52}.cards{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:15px 0}.game-card{border:1px solid #39516a;border-radius:15px;padding:13px;background:#1b2a45;min-height:148px;display:flex;flex-direction:column;gap:9px}.game-card.active{border-color:var(--aqua);box-shadow:inset 0 0 0 1px #64caba59}.game-card h3{font-size:1rem;margin:0}.game-card p{font-size:.78rem;color:var(--muted);margin:0;line-height:1.45;flex:1}.game-icon{font-size:1.65rem}.controls{margin:16px 0}.controls .btn{flex:1}.rule{border:1px solid #41536c;background:#202e47;border-radius:14px;padding:13px 15px;line-height:1.52;font-size:.9rem;margin:14px 0}.rule strong{color:var(--gold)}.status{padding:10px 12px;background:#132a35;border:1px solid #35767c;border-radius:12px;margin-top:14px;color:#b8f8ed;font-size:.86rem}.status:empty{display:none}.subheading{font-size:1rem;font-weight:800;margin:10px 0}.gameplay{min-height:285px}.stats{display:flex;justify-content:space-between;gap:10px;margin:12px 0;color:var(--muted);font-size:.87rem}.stats b{color:var(--text)}.stats .bad{color:var(--rose)}.outcome{text-align:center;padding:26px 14px;background:linear-gradient(135deg,#2b3950,#193139);border-radius:16px;border:1px solid #507d79}.outcome .emoji{font-size:3rem}.outcome h3{font-size:1.7rem;margin:6px}.outcome p{max-width:420px;margin:10px auto 20px}.line{height:1px;background:var(--border);margin:18px 0}.tilegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:13px}.tile{height:72px;background:#283c59;border:1px solid #627796;border-radius:13px;font-size:1.85rem}.tile.flipped{background:#395477;border-color:#a6d5ef}.tile.matched{background:#1d483f;border-color:#63b7a3}.digitrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.digitrow input{width:100%;max-width:170px;background:#0f1d30;color:var(--text);border:1px solid #647994;border-radius:12px;padding:13px;font-size:1.3rem;letter-spacing:.27em}.log{margin-top:14px;border-collapse:collapse;width:100%;font-size:.86rem}.log th,.log td{border-bottom:1px solid #35465e;padding:9px;text-align:left}.log th{font-size:.76rem;color:var(--muted)}.options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.options .btn{min-height:52px}.signal{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:20px 0}.signal span{display:grid;place-items:center;width:48px;height:50px;border-radius:11px;background:#2b3c5e;font-size:1.4rem}.progress{height:9px;border-radius:99px;background:#0c1727;overflow:hidden;margin-top:10px}.progress>div{height:100%;background:var(--aqua);transition:width .2s}.crisis{padding:15px;border:1px solid #586988;background:#202e47;border-radius:16px}.crisis h3{margin:8px 0 15px;font-size:1.1rem}.feed{display:grid;gap:7px;padding:0;list-style:none}.feed li{padding:8px;background:#21314c;border-radius:9px;font-size:.83rem;color:var(--muted)}.field,textarea{width:100%;border-radius:12px;border:1px solid #61738b;background:#111d30;color:var(--text);padding:11px 12px;margin:7px 0 12px}textarea{resize:vertical;min-height:140px;line-height:1.42;font-size:.83rem}.select{width:100%;background:#182a45;color:var(--text);padding:12px;border:1px solid #61738b;border-radius:12px}.footer{color:var(--muted);font-size:.79rem;line-height:1.5;margin-top:20px;text-align:center}.access{font-size:.8rem;color:var(--muted)}[hidden]{display:none!important}
+@media(max-width:740px){.layout{grid-template-columns:1fr}.hero{padding:22px 18px}.panel{padding:15px}.app{padding:12px 10px 55px}.tile{height:62px}.cards{gap:8px}.game-card{min-height:163px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="hero" aria-labelledby="title">
+    <div class="eyebrow">VGamer1991 Studios • Accessible source edition</div>
+    <h1 id="title">Boredom Emergency Arcade <span style="color:var(--aqua)">2.0</span></h1>
+    <p>Two rotating playable games, six cartridges, unlimited replays, a new-game request generator, and—this is important—actual ending conditions. No surprise never-ending musicals.</p>
+    <footer><span class="pill">Works offline</span><span class="pill">Complete source in this file</span><span class="pill warn">Craig is still complaining</span></footer>
+  </section>
+  <div class="layout">
+    <div class="main">
+      <section class="panel" aria-labelledby="gamesHeading">
+        <header><h2 id="gamesHeading">🎮 Your two games</h2><span class="label" id="pairNumber">Pair 1/3</span></header>
+        <p class="subtitle" style="margin:0">Rotate through three different pairs. Replay for fresh puzzles.</p>
+        <div class="cards" id="games"></div>
+        <button id="nextPair" type="button" class="btn primary wide">🎲 Give me TWO DIFFERENT games</button>
+      </section>
+      <section class="panel space-top" aria-labelledby="playingTitle">
+        <header><h2 id="playingTitle">Loading game…</h2><button id="replay" class="btn sm ghost" type="button">↻ Replay</button></header>
+        <div id="gameplay" class="gameplay" aria-live="polite"></div>
+        <div id="gameStatus" class="status" role="status" aria-live="polite"></div>
+      </section>
+    </div>
+    <aside class="right">
+      <section class="panel" aria-labelledby="factoryHeading">
+        <header><h2 id="factoryHeading">✨ GPT-6 Game Factory</h2><span class="pill warn">Online helper</span></header>
+        <p class="subtitle">Ask ChatGPT to build new playable games—not merely describe them. Unlike the six offline cartridges, this needs a ChatGPT conversation.</p>
+        <label class="label" for="promptKind">Choose your expansion</label>
+        <select class="select" id="promptKind">
+          <option value="two">TWO brand-new mini-games</option>
+          <option value="one">ONE surprise mini-game</option>
+          <option value="portable">A new saveable offline game</option>
+          <option value="story">Finite interactive adventure</option>
+        </select>
+        <label class="label" for="promptText" style="display:block;margin-top:14px">Exact request to give GPT-6</label>
+        <textarea id="promptText" aria-label="Expansion prompt" spellcheck="false"></textarea>
+        <div class="button-row"><button class="btn primary" id="copyPrompt" type="button">📋 Copy prompt</button><button class="btn" id="openChat" type="button">↗ Open ChatGPT</button></div>
+        <p class="tiny" id="copyResult" aria-live="polite">Copy the prompt and paste it into ChatGPT. This standalone copy can't silently call GPT-6 on its own.</p>
+      </section>
+      <section class="panel" aria-labelledby="backupHeading">
+        <h2 id="backupHeading">💾 Keep the sauce</h2>
+        <p class="subtitle">All playable code is inside this HTML file. Your current arcade progress auto-saves locally when the browser permits it. You can also export/import your arcade save.</p>
+        <div class="button-row">
+          <button class="btn sm" id="exportSave" type="button">↓ Export save</button>
+          <button class="btn sm" id="importSave" type="button">↑ Import save</button>
+          <input type="file" accept="application/json,.json" id="fileInput" hidden>
+        </div>
+        <div class="line"></div>
+        <p class="tiny">Note: local HTML files don't have the ChatGPT Intelligent UI runtime. This is a portable reimplementation of the games, with source you can inspect and keep. A separate README in the ZIP explains what's the same and what's different.</p>
+      </section>
+      <section class="panel" aria-labelledby="rulesHeading">
+        <h2 id="rulesHeading">🛠️ Patch notes</h2>
+        <ul class="feed"><li>Six playable cartridges, three pairs</li><li>Fresh puzzle variants on replay</li><li>Wins and losses have actual endings</li><li>New-game prompts can be copied anytime</li><li>No API key, sign-up or external libraries required to play offline</li><li>Source code is not locked behind an opaque UI widget</li></ul>
+      </section>
+    </aside>
+  </div>
+  <p class="footer">VGamer1991 Boredom Emergency Arcade • Saveable source edition • Not affiliated with any fictional goose-run financial institution.</p>
+</main>
+<script>
+/*
+ VGAMER1991 BOREDOM EMERGENCY ARCADE 2.0 — FULL SOURCE
+ --------------------------------------------------
+ Self-contained vanilla JavaScript. No CDN, frameworks, external assets or API keys.
+ The original conversation's Intelligent UI used its own component runtime. This is
+ a portable, independent recreation. Expansion prompts are provided exactly as text;
+ new GPT-generated games need a ChatGPT conversation, not an offline JavaScript call.
+*/
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const rand = max => Math.floor(Math.random()*max);
+const shuffle = input => {const a=[...input];for(let i=a.length-1;i>0;i--){const j=rand(i+1);[a[i],a[j]]=[a[j],a[i]]}return a};
+const deep = value => JSON.parse(JSON.stringify(value));
+const games=[
+ {name:"Angel's Memory Heist",icon:'🐈‍⬛',description:'Match four pairs of stolen evidence before Angel files a complaint.'},
+ {name:'Cloakster Cipher Lock',icon:'🔐',description:'Guess the hidden three-digit lock code in six deductions.'},
+ {name:'Nap Credit Audit',icon:'🧮',description:'Check five suspicious bills before the hamster audits YOU.'},
+ {name:'GOATMaster Boot Doctor',icon:'💾',description:'Repair the virtual machine in the correct order.'},
+ {name:'Sunshine Island Crisis Desk',icon:'🏝️',description:'Stop four disasters before the budget runs out.'},
+ {name:'Honk Signal Memory',icon:'🪿',description:'Remember three increasingly long goose transmissions.'}
+];
+const gamePairs=[[0,1],[2,3],[4,5]];
+const symbol=['🐈‍⬛','🪿','💾','🎹'];
+const invoices=[
+ ['Philip',4,3,2],['Jimmy',3,4,1],['Craig',2,5,4],['Gerald',5,2,3],
+ ['Sir Nibbles',3,3,5],['Honkbert',4,4,2],['Mayor Fluffington',6,2,4],
+ ['Hotel manager',3,5,1],['Piano tuner',2,4,6],['Court clerk',5,3,1]
+];
+const missions=[
+ {name:'HONK.DSK infected the startup sequence',hint:'Silence the alarm first. Remove the infected floppy before restoring the snapshot. Restart only after restoration.',steps:['Mute alarm','Remove bad floppy','Restore snapshot','Restart VM']},
+ {name:'A Sound Blaster driver is crashing the VM',hint:'Stop the VM before changing anything. Create a backup before disabling the driver. Restart last.',steps:['Stop VM','Back up VM','Disable driver','Restart VM']},
+ {name:'GOATMaster is booting the wrong drive',hint:'Power off before detaching hardware. The correct disk must replace the wrong disk before booting.',steps:['Power off','Detach wrong disk','Attach correct disk','Boot VM']},
+ {name:'The virtual machine boot priority is corrupted',hint:'Pause first. Save the current state before repairing drive priority. Resume only after repairs.',steps:['Pause VM','Save state','Fix boot order','Resume VM']}
+];
+const crises=[
+ {name:"The mayor's 846 pillows have blocked the road.",cheap:'Give Craig a clipboard',proper:'Build a pillow conveyor',small:'Craig begins shouting directions. One pillow moves.',big:'The road clears. The mayor demands a ride on the conveyor.'},
+ {name:'Both Honkberts demand to be Chief Financial Goose.',cheap:'Offer a conciliatory cracker',proper:'Hire an independent auditor',small:'The geese argue over ownership of the cracker.',big:'The auditor suspends both geese from financial office.'},
+ {name:'The orchestra is passing laws between songs.',cheap:'Ask the pianist to play quietly',proper:'Isolate the legislative sound system',small:'The pianist switches to whisper-singing.',big:'Music stops changing the municipal charter.'},
+ {name:'The nap-rent decree is still on the books.',cheap:'Ask the mayor very nicely',proper:'Draft and certify a repeal',small:'The mayor says mrrp. Lawyers argue about its meaning.',big:'Nap-based rent is formally abolished.'},
+ {name:'Every complaint requires three additional complaints.',cheap:'Ask everyone to be patient',proper:'Cancel the recursive paperwork',small:'Complaints are now written in smaller handwriting.',big:'The complaint-duplication loop is shut down.'},
+ {name:'A Ministry of Honking is demanding office space.',cheap:'Assign a broom closet',proper:'Abolish the redundant ministry',small:'Honking now echoes through the ventilation system.',big:'The ministry becomes an ordinary goose sanctuary.'}
+];
+const PROMPTS={
+ two:`Boredom Arcade expansion request: Build TWO completely NEW playable Intelligent UI mini-games in your next reply. They must be interactive and working immediately, with actual controls, state, meaningful decisions, a clear finite win/lose condition, and replayability. Make their mechanics genuinely different from these six existing games: card matching, three-digit codebreaking, arithmetic auditing, ordering boot repair steps, resource-budget crisis management, and signal sequence memory. Surprise me with hilarious ideas tailored to VGamer1991 Studios, absurd comedy, retro gaming, cats, and shenanigans. Make both playable in-chat, not just pitches. Include a real button that requests two more brand-new playable games, avoiding prior mechanics, and ensure no story can enter an infinite three-choice continuation loop.`,
+ one:`Create ONE genuinely original, fully interactive Intelligent UI mini-game for me to play immediately in this chat. Surprise me with a funny theme and fresh mechanics unlike card matching, cipher guessing, math audits, boot ordering, budget management or signal memory. Include functioning controls, meaningful rules, a real ending and a replay control. I want an actual game, not a suggestion or game idea. Keep it replayable and finite.`,
+ portable:`Create ONE original standalone offline browser game as a complete, editable single-file HTML document (with embedded CSS and JavaScript, zero dependencies and zero API calls). Make it genuinely playable with visible controls, replayable randomized challenges, and a finite win/lose condition. Include a source-code download and a brief README. Don't just give me a mock-up or pseudocode. Match the ridiculous VGamer1991 Studios / cat / retro-computer sense of humour. Don't copy memory-matching, cipher guessing, nap-credit arithmetic, boot-order puzzles, crisis budgeting, or signal-repeat memory mechanics. Explicitly label anything that cannot work offline.`,
+ story:`Start an absurdly funny interactive adventure set on Sunshine Island. Preserve established canon including the ending of the cat-mayor Nap Economy crisis. Make this a DISTINCT new story, not an endless continuation of the already resolved one. Never decide my character's actions. Present three meaningful choices after each non-final episode. This story has a STRICT limit of four episodes: establish the objective in Episode 1, advance toward it in Episodes 2–3, and conclude definitively with a genuine resolution, epilogue, and THE END by Episode 4. Do not include more mandatory choices after the ending. Track the episode number accurately.`
+};
+const key='vgamer1991-boredom-arcade-v2-source-save';
+let app={pair:0,slot:0,plays:0,game:null};
+function defaultRun(gameId){
+ const g={id:gameId,notice:'',result:null};
+ if(gameId===0){Object.assign(g,{board:shuffle([0,0,1,1,2,2,3,3]),first:null,second:null,matched:[],misses:0})}
+ if(gameId===1){Object.assign(g,{secret:shuffle(['1','2','3','4','5']).slice(0,3).join(''),guesses:[],draft:''})}
+ if(gameId===2){Object.assign(g,{invoices:shuffle(invoices).slice(0,5),index:0,score:0,choices:[],awaitNext:false});g.choices=makeAuditChoices(g.invoices[0])}
+ if(gameId===3){const m=rand(missions.length);Object.assign(g,{mission:m,order:shuffle([0,1,2,3]),steps:[],misses:0})}
+ if(gameId===4){Object.assign(g,{events:shuffle(crises).slice(0,4),index:0,budget:6,stability:0,log:[]})}
+ if(gameId===5){Object.assign(g,{sequences:Array.from({length:3},(_,i)=>Array.from({length:i+3},()=>rand(4))),index:0,phase:'study',pos:0,misses:0})}
+ return g;
+}
+function makeAuditChoices(inv){const right=inv[1]*inv[2]+inv[3];return shuffle([right,right-2,right+3,right+5])}
+function currentId(){return gamePairs[app.pair][app.slot]}
+function validSave(x){return x&&Number.isInteger(x.pair)&&x.pair>=0&&x.pair<3&&Number.isInteger(x.slot)&&x.slot>=0&&x.slot<=1&&x.game&&x.game.id===gamePairs[x.pair][x.slot]}
+function save(){try{localStorage.setItem(key,JSON.stringify(app))}catch{}}
+function load(){try{const v=JSON.parse(localStorage.getItem(key));if(validSave(v))app=v}catch{} if(!app.game)app.game=defaultRun(currentId())}
+function newRun(){app.plays++;app.game=defaultRun(currentId());save();render()}
+function chooseSlot(slot){if(slot===app.slot)return;app.slot=slot;newRun()}
+function nextPair(){app.pair=(app.pair+1)%3;app.slot=0;newRun()}
+function complete(win,notice){app.game.result=win?'win':'lose';app.game.notice=notice}
+function stateUpdate(notice){if(notice!==undefined)app.game.notice=notice;save();render()}
+function summary(){const g=app.game;switch(g.id){case 0:return `All ${g.matched.length/2} pairs collected in ${g.misses} mismatches.`;case 1:return `The lock code was ${g.secret}.`;case 2:return `You got ${g.score}/5 bills right.`;case 3:return `You made ${g.misses} mistakes.`;case 4:return `Island stability: ${g.stability}/10. Budget remaining: ${g.budget}.`;case 5:return `You reproduced ${g.index} of 3 transmissions.`;default:return ''}}
+function ending(){const g=app.game;const success={0:'Angel has been outsmarted. She has filed an appeal.',1:'The Cloakster safe opens. The Blue Cloakster claims it was just a test.',2:'Philip finally meets an accountant who can count.',3:'GOATMaster boots successfully. BAAAAA!',4:'The island is stable. Craig requests paid leave.',5:'The final Honk Signal is decoded. Silence returns—for now.'};const fail={0:'Something unexpected happened in the memory heist.',1:'The Cloaksters change their code. Try a fresh round.',2:'The Royal Bank of Snooze orders a recount.',3:'The boot repair has failed. Reconsider the order.',4:'The island misses its stability target. The mayor goes back to sleep.',5:'The signal is lost in a chorus of honking.'};return `<section class="outcome"><div class="emoji">${g.result==='win'?'🏆':'🔁'}</div><h3>${g.result==='win'?'YOU WIN!':'ROUND OVER!'}</h3><p>${g.result==='win'?success[g.id]:fail[g.id]}</p><p class="tiny">${esc(summary())}</p><div class="button-row" style="justify-content:center"><button type="button" class="btn primary" data-action="replay">↻ Play again</button><button type="button" class="btn" data-action="nextpair">🎲 Another pair</button></div></section>`}
+function renderGames(){
+ $('pairNumber').textContent=`Pair ${app.pair+1}/3`;
+ $('games').innerHTML=gamePairs[app.pair].map((id,slot)=>{let x=games[id];return `<div class="game-card ${app.slot===slot?'active':''}"><div class="game-icon" aria-hidden="true">${x.icon}</div><h3>${esc(x.name)}</h3><p>${esc(x.description)}</p><button class="btn sm ${app.slot===slot?'primary':''}" data-action="choose" data-slot="${slot}" ${app.slot===slot?'disabled':''}>${app.slot===slot?'Playing now':'Play this'}</button></div>`}).join('');
+ $('playingTitle').textContent=`${games[currentId()].icon} ${games[currentId()].name}`;
+}
+function render(){renderGames();const g=app.game;$('gameplay').innerHTML=g.result?ending():[memoryView,cipherView,auditView,bootView,crisisView,honkView][g.id]();$('gameStatus').textContent=g.notice;}
+function memoryView(){const g=app.game;return `<div class="rule"><strong>MISSION:</strong> Angel hid four pairs of evidence cards. Turn over two at a time and match them all. If they don't match, you can keep looking at them until your next choice.</div><div class="stats"><span>Pairs: <b>${g.matched.length/2}/4</b></span><span>Misses: <b>${g.misses}</b></span></div><div class="tilegrid">${g.board.map((id,i)=>{const matched=g.matched.includes(i),visible=matched||g.first===i||g.second===i;return `<button type="button" aria-label="Card ${i+1}: ${visible?symbol[id]:'face down'}" class="tile ${matched?'matched':visible?'flipped':''}" data-action="flip" data-i="${i}" ${matched?'disabled':''}>${visible?symbol[id]:'❔'}</button>`}).join('')}</div><p class="tiny">Craig is considering charging the cards rent. Do not let him.</p>`}
+function flipCard(i){const g=app.game;if(g.result||g.matched.includes(i)||g.first===i||g.second===i)return;if(g.second!==null){g.first=null;g.second=null}if(g.first===null){g.first=i;g.notice='First card turned. Find its match.'}else{g.second=i;if(g.board[g.first]===g.board[i]){g.matched.push(g.first,i);g.first=null;g.second=null;g.notice='MATCH! Evidence secured.';if(g.matched.length===8)complete(true,'All evidence recovered.')}else{g.misses++;g.notice='No match. Remember the cards; your next flip will turn them over.'}}stateUpdate()}
+function cipherView(){const g=app.game;return `<div class="rule"><strong>MISSION:</strong> Guess the three-digit code. The digits are distinct and drawn from 1–5. Six guesses maximum. A number in the right position counts as "right place"; a correct number elsewhere counts as "wrong place".</div><div class="stats"><span>Guesses remaining: <b>${6-g.guesses.length}/6</b></span><span>Code: <b>???</b></span></div><div class="digitrow"><input id="codeGuess" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="e.g. 123" value="${esc(g.draft)}" aria-label="Three-digit safe code"><button class="btn primary" data-action="guess">🔓 Try code</button></div>${g.guesses.length?`<table class="log"><thead><tr><th>Guess</th><th>Right place</th><th>Wrong place</th></tr></thead><tbody>${g.guesses.map(q=>`<tr><td><b>${q.guess}</b></td><td>${q.exact}</td><td>${q.misplaced}</td></tr>`).join('')}</tbody></table>`:'<p class="tiny">The Blue Cloakster is taking notes.</p>'}`}
+function guess(){const g=app.game;const guess=g.draft;if(!/^[1-5]{3}$/.test(guess)||new Set(guess).size!==3){stateUpdate('Enter three DIFFERENT digits from 1 to 5.');return}let exact=0,shared=0;for(let i=0;i<3;i++){if(guess[i]===g.secret[i])exact++;if(g.secret.includes(guess[i]))shared++}g.guesses.push({guess,exact,misplaced:shared-exact});g.draft='';if(exact===3)complete(true,'The safe is open!');else if(g.guesses.length>=6)complete(false,'No guesses remain.');else g.notice='Clues recorded. Check the positions carefully.';stateUpdate()}
+function auditView(){const g=app.game;const inv=g.invoices[g.index];const right=inv[1]*inv[2]+inv[3];return `<div class="rule"><strong>MISSION:</strong> Five bills, four possible answers each. Pass with at least 4/5 correct. Multiply residents by rent, then add the fine.</div><div class="stats"><span>Bill <b>${g.index+1}/5</b></span><span>Correct <b>${g.score}</b></span></div><div class="crisis"><div class="eyebrow">Royal Bank of Snooze • Invoice</div><h3>${esc(inv[0])}</h3><table class="log"><tbody><tr><td>Residents</td><td>${inv[1]}</td></tr><tr><td>Rent / resident</td><td>${inv[2]} credits</td></tr><tr><td>Extra fine</td><td>${inv[3]} credits</td></tr></tbody></table><h3>What's the total?</h3>${g.awaitNext?`<p>${esc(g.notice)}</p><button class="btn primary wide" data-action="auditnext">${g.index===4?'See result':'Next invoice →'}</button>`:`<div class="options">${g.choices.map(v=>`<button class="btn" data-action="audit" data-answer="${v}">${v} credits</button>`).join('')}</div>`}</div>`}
+function audit(amount){const g=app.game;if(g.awaitNext)return;const inv=g.invoices[g.index],right=inv[1]*inv[2]+inv[3];const okay=amount===right;if(okay)g.score++;g.awaitNext=true;g.notice=okay?'Correct! Philip approves.':`Incorrect. Correct answer: ${right} credits.`;stateUpdate()}
+function auditNext(){const g=app.game;if(!g.awaitNext)return;g.awaitNext=false;if(g.index===4)complete(g.score>=4,`Final score: ${g.score}/5.`);else{g.index++;g.choices=makeAuditChoices(g.invoices[g.index]);g.notice='Next bill, please.'}stateUpdate()}
+function bootView(){const g=app.game,m=missions[g.mission];return `<div class="rule"><strong>EMERGENCY:</strong> ${esc(m.name)}<p>${esc(m.hint)}</p></div><div class="stats"><span>Completed: <b>${g.steps.length}/4</b></span><span>Mistakes: <b>${g.misses}/3</b></span></div><div class="options">${g.order.map(i=>`<button class="btn" data-action="boot" data-step="${i}" ${g.steps.includes(i)?'disabled':''}>${esc(m.steps[i])}</button>`).join('')}</div><div class="crisis"><b>Repair sequence</b><ol>${g.steps.map(i=>`<li>${esc(m.steps[i])} ✓</li>`).join('')}</ol>${!g.steps.length?'<p class="tiny">No steps completed.</p>':''}</div>`}
+function boot(step){const g=app.game;if(g.steps.includes(step))return;if(step!==g.steps.length){g.steps=[];g.misses++;g.notice='WRONG ORDER! The computer honks and the repair sequence resets.';if(g.misses>=3)complete(false,'Too many incorrect steps.');}else{g.steps.push(step);g.notice='Step accepted.';if(g.steps.length===4)complete(true,'BAAAAA! GOATMaster boots!')}stateUpdate()}
+function crisisView(){const g=app.game,c=g.events[g.index];return `<div class="rule"><strong>MISSION:</strong> Four crises. Six repair tokens. Get at least 10 stability points to win. A cheap fix is free (+1); a proper fix costs two tokens (+3).</div><div class="stats"><span>Budget: <b>${g.budget}/6</b></span><span>Stability: <b>${g.stability}/10</b></span></div><div class="progress"><div style="width:${Math.min(100,10*g.stability)}%"></div></div><div class="crisis space-top"><span class="eyebrow">Crisis ${g.index+1}/4</span><h3>${esc(c.name)}</h3><div class="button-row"><button class="btn" data-action="crisis" data-high="0">${esc(c.cheap)}<br><span class="tiny">Free • +1 stability</span></button><button class="btn yellow" data-action="crisis" data-high="1" ${g.budget<2?'disabled':''}>${esc(c.proper)}<br><span style="font-size:.78rem;color:#584125">2 tokens • +3 stability</span></button></div></div>${g.log.length?`<div class="subheading">Consequences so far</div><ul class="feed">${g.log.map(x=>`<li>✓ ${esc(x)}</li>`).join('')}</ul>`:''}`}
+function actCrisis(high){const g=app.game;if(high&&g.budget<2)return;let c=g.events[g.index];g.budget-=high?2:0;g.stability+=high?3:1;g.log.push(high?c.big:c.small);g.notice=high?'Expensive but effective.':'Cheap and cheerful. Mostly cheap.';g.index++;if(g.index===4)complete(g.stability>=10,'The crisis committee has concluded.');stateUpdate()}
+function honkView(){const g=app.game,seq=g.sequences[g.index];return `<div class="rule"><strong>MISSION:</strong> Memorize three increasingly long transmissions, then repeat the sequence in order. Three errors end the round.</div><div class="stats"><span>Transmission: <b>${g.index+1}/3</b></span><span>Mistakes: <b>${g.misses}/3</b></span></div><div class="crisis" style="text-align:center"><div class="eyebrow">${g.phase==='study'?'Memorize these signals':'Repeat the hidden signals'}</div><div class="signal">${seq.map((v,i)=>`<span>${g.phase==='study'?symbol[v]:i<g.pos?'✓':'?'}</span>`).join('')}</div>${g.phase==='study'?'<button class="btn primary" data-action="hide">👁 Hide signal and repeat</button>':`<div class="options" style="grid-template-columns:repeat(4,1fr)">${symbol.map((s,i)=>`<button class="btn" style="min-height:66px;font-size:1.7rem" data-action="signal" data-s="${i}">${s}</button>`).join('')}</div>`}</div>`}
+function signalTap(n){const g=app.game;if(g.phase!=='repeat')return;const seq=g.sequences[g.index];if(n!==seq[g.pos]){g.misses++;g.phase='study';g.pos=0;g.notice='WRONG SIGNAL! Study the pattern again.';if(g.misses>=3)complete(false,'Too many errors.')}else{g.pos++;g.notice='Correct signal!';if(g.pos===seq.length){g.pos=0;g.index++;g.phase='study';g.notice='Full transmission accepted. Next round unlocked!';if(g.index===3)complete(true,'All three signals decoded.')}}stateUpdate()}
+function renderPrompt(){$('promptText').value=PROMPTS[$('promptKind').value]}
+async function copyPrompt(){const text=$('promptText').value;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}else{const area=$('promptText');area.focus();area.select();if(!document.execCommand('copy'))throw Error('copy command unavailable')} $('copyResult').textContent='Copied! Paste it into your ChatGPT conversation.'}catch(e){$('promptText').focus();$('promptText').select();$('copyResult').textContent='Auto-copy is blocked on this device. The text is selected: use Copy from the selection menu.'}}
+function exportSave(){const blob=new Blob([JSON.stringify({format:'VGamer1991-Arcade-2.0',date:new Date().toISOString(),app},null,2)],{type:'application/json'});const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='VGamer1991_arcade_save.json';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(link.href),1000)}
+async function importSave(file){if(!file)return;try{const text=await file.text();const input=JSON.parse(text);if(input.format!=='VGamer1991-Arcade-2.0'||!validSave(input.app))throw new Error('Not a compatible arcade save.');const g=input.app.game;if(!Number.isInteger(g.id)||g.id<0||g.id>5)throw new Error('Invalid cartridge.');app=deep(input.app);save();render();$('copyResult').textContent='Arcade save imported successfully.'}catch(e){alert('Could not import: '+e.message)}$('fileInput').value=''}
+function dispatch(evt){let target=evt.target.closest('[data-action]');if(!target)return;const a=target.dataset.action;switch(a){case 'choose':chooseSlot(Number(target.dataset.slot));break;case 'nextpair':nextPair();break;case 'replay':newRun();break;case 'flip':flipCard(Number(target.dataset.i));break;case 'guess':guess();break;case 'audit':audit(Number(target.dataset.answer));break;case 'auditnext':auditNext();break;case 'boot':boot(Number(target.dataset.step));break;case 'crisis':actCrisis(target.dataset.high==='1');break;case 'hide':app.game.phase='repeat';app.game.pos=0;stateUpdate('The signal is now hidden. Repeat it!');break;case 'signal':signalTap(Number(target.dataset.s));break;}}
+$('games').addEventListener('click',dispatch);$('gameplay').addEventListener('click',dispatch);
+$('nextPair').addEventListener('click',nextPair);$('replay').addEventListener('click',newRun);
+$('gameplay').addEventListener('input',event=>{if(event.target.id==='codeGuess'){app.game.draft=event.target.value.replace(/[^1-5]/g,'').slice(0,3);if(event.target.value!==app.game.draft)event.target.value=app.game.draft;save()}});
+$('gameplay').addEventListener('keydown',event=>{if(event.target.id==='codeGuess'&&event.key==='Enter'){event.preventDefault();guess()}});
+$('promptKind').addEventListener('change',renderPrompt);$('copyPrompt').addEventListener('click',copyPrompt);
+$('openChat').addEventListener('click',()=>window.open('https://chatgpt.com/','_blank','noopener,noreferrer'));
+$('exportSave').addEventListener('click',exportSave);$('importSave').addEventListener('click',()=>$('fileInput').click());$('fileInput').addEventListener('change',event=>importSave(event.target.files[0]));
+load();renderPrompt();render();
+// Source-inspection and automated-test helper. Doesn't alter normal gameplay.
+window.VGamerArcade={version:'2.0-saveable',getState:()=>deep(app),newRun,nextPair,games:games.map(g=>g.name)};
+})();
+</script>
+</body>
+</html>
