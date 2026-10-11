@@ -4,7 +4,7 @@ Play directly in your browser: https://vgamer1991-boredom-arcade.vgamer1991.chat
 
 Verified October 10, 2026, in the published site using Chrome browser controls. No sign-in was required. This deployment uses ChatGPT Sites; the expected GitHub Pages URL returned HTTP 404 during setup. GitHub Pages administration is not exposed by the connected GitHub tools, and the browser had no signed-in GitHub session.
 
-## Edition and preservation
+## Original publication: edition and preservation
 
 This is the standalone, saveable **Arcade 2.0 Source Edition**, an independent recreation. The original in-chat Intelligent UI's hidden implementation was never recovered. This deployment does not claim to recover or export it.
 
@@ -35,3 +35,32 @@ Angel's Memory Heist intentionally has no normal loss condition or turn cap: its
 ## Verification limits
 
 These checks cover the listed browser paths, not every randomized scenario or every device/browser. iOS Safari, exhaustive save-file validation, offline local-file execution and all Game Factory helper interactions were not browser-tested in this pass. Normal gameplay required no code repairs. Published source and reconstruction documents remain available in this repository.
+
+## Mobile usability audit — October 10, 2026
+
+### Confirmed findings and repairs
+
+- Desktop Chrome measured secondary controls (Play this, Replay, Export save, Import save) at 35.94 CSS pixels high. Buttons now have a minimum 44 × 44 CSS-pixel target and touch-action: manipulation; zoom remains enabled.
+- The old validator accepted {pair:0,slot:0,plays:0,game:{id:0}}. Source regression reproduced import persisting this incomplete state before rendering failed. Imported saves now receive cartridge-specific shape checks, render before persistence, and retain previous progress on rejection. Invalid local saves fall back to a fresh run. This is structural validation, not exhaustive protection against every fabricated game state.
+- Storage failures were silently ignored. They now produce a visible warning to export before leaving; an import without storage succeeds for the current session with an explicit warning.
+- Save feedback formerly appeared in the Game Factory panel. It now appears beside the save controls, with polite live announcements and iPhone Files guidance.
+
+### Preventive mobile improvements (not reproduced Safari defects)
+
+Grid tracks allow shrinking, headers and stats wrap, and cards stack at 380 pixels or narrower. Four-column memory and signal controls remain intact. Form text is at least 16 CSS pixels to reduce an iOS focus-zoom risk. Download object URLs are retained for 60 seconds rather than one second to give file handling more time. The JSON envelope, format marker, storage key and game fields are unchanged; no new game or ending was added.
+
+### Checks performed
+
+- Live desktop Chrome: measured targets, selected Cipher, entered repeated digits (rejected), and rotated to the next pair.
+- Node source regression with minimal DOM/storage doubles: six victories, five defeats (Memory has no loss path), replay, save round-trips for all six active cartridges and their victory states, rejection of incomplete game data and malformed JSON without progress loss, storage-denied import and export-request construction. Baseline import corruption was reproduced separately. Run: node tests/source-regression.cjs index.html [optional-path-to-original-index.html].
+- Syntax execution and source regression passed on the changed HTML. These doubles do not prove layout, touch events, native downloads, file chooser behavior or Safari compatibility.
+
+### Remaining verification limits and iPhone checklist
+
+Only desktop Chrome browser control is exposed in this session. No supported viewport resize/touch emulation, WebKit runtime or actual iPhone Safari testing was available. Managed preview browser tooling is unavailable, so no local browser preview was run. Narrow-screen layouts have been reviewed in CSS, not rendered at mobile widths in this pass.
+
+On a real iPhone, check portrait widths around 320/375/390/430 CSS pixels, landscape, text enlargement and pinch zoom. Check all six games for clipped text, horizontal scrolling, reachable controls, accidental repeat actions and endings/replay. In Cipher, check the numeric keyboard and submit button. Export to Files, switch cartridges, import that same JSON, verify restored state, and select the same file again. Test a canceled picker, malformed JSON, browser reload and any private/storage-restricted mode used. Confirm that import errors keep current progress and that save feedback is visible. In-app browsers may handle downloads differently; test Safari itself before calling it Safari-verified.
+
+Potential iOS risks still unverified: native download versus JSON preview, Files picker behavior, delayed file reads, storage eviction/restrictions, keyboard viewport changes, font/emoji sizing and actual touch targeting. No actual iPhone Safari compatibility claim is made.
+
+Changed index.html SHA-256: 78a1b274164a89c09535bff44784f091263158ae2d02ee32d3b9406529932844. The byte-identical and unchanged-source statements above describe the original publication, not this later repaired edition.
