@@ -64,3 +64,7 @@ On a real iPhone, check portrait widths around 320/375/390/430 CSS pixels, lands
 Potential iOS risks still unverified: native download versus JSON preview, Files picker behavior, delayed file reads, storage eviction/restrictions, keyboard viewport changes, font/emoji sizing and actual touch targeting. No actual iPhone Safari compatibility claim is made.
 
 Changed index.html SHA-256: 78a1b274164a89c09535bff44784f091263158ae2d02ee32d3b9406529932844. The byte-identical and unchanged-source statements above describe the original publication, not this later repaired edition.
+
+### Post-publication desktop checks
+
+The repaired edition was published to the same public address on October 10, 2026 (America/Toronto). Live Chrome measured the formerly small controls at 44 CSS pixels high. Export downloaded a JSON file; after switching from Nap Credit Audit to Sunshine Island, importing it restored the prior Audit gameplay text exactly. Re-importing the same file succeeded. An incomplete Memory save was rejected with visible feedback while preserving the current Audit state. Reload restored that state exactly. These checks are desktop Chrome checks, not mobile Safari or touch-emulation checks.
