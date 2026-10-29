@@ -16,7 +16,7 @@ The landing experience shows **two selectable games at a time**, drawn from thes
 
 The button **Give me TWO DIFFERENT games** advances the pair in a loop (1→2→3→1) and starts the first game in the new pair. Both cards allow direct selection. **Replay** resets the current game with a fresh board, code, randomized challenge or event order.
 
-Each game has an explicit `result` state (`win`, `lose`, or not finished). At completion it displays a real ending and offers Play Again and Another Pair buttons. Replay and rotation remain available; the user is never trapped in a game or story.
+All six games have finite victory objectives; five also have explicit defeat conditions. Each game tracks an explicit `result` state (`win`, `lose`, or not finished). At completion it displays a real ending and offers Play Again and Another Pair buttons. Replay and rotation remain available; the user is never trapped in a game or story.
 
 ## Game mechanics
 
@@ -24,6 +24,7 @@ Each game has an explicit `result` state (`win`, `lose`, or not finished). At co
 - Eight face-down cards in four pairs: 🐈‍⬛, 🪿, 💾, 🎹.
 - Two clicks reveal two cards. A matched pair stays exposed, unmatched pair stays exposed until the next card is selected, then hides.
 - Four matched pairs = win; track mismatches; randomize every run.
+- Unlimited attempts guarantee victory on completing all four pairs; there is no normal loss condition or turn cap, and mismatches never end the run.
 
 ### 2. Cloakster Cipher Lock
 - Secret code is **three distinct digits from 1–5**.
@@ -78,4 +79,4 @@ In future adventures:
 
 ## One-paragraph restart prompt
 
-> Rebuild my VGamer1991 Boredom Emergency Arcade based on the attached `index.html` and `REBUILD_RECIPE.md`. Create a genuinely playable, attractive interactive arcade (not an illustration or a list of ideas) with two rotating mini-games visible at a time, six fully implemented starter games with the exact mechanics described, replayable randomized variations, clear victories/losses, and an explicit ability to request two new *playable* games through ChatGPT. Don't confuse requesting games from GPT-6 with permanently adding them to a standalone browser file. Preserve the ability to export/save the source. Interactive stories MUST end within a declared finite episode limit; no infinite three-choice recursion. Show me the working result and provide full source files for backup.
+> Rebuild my VGamer1991 Boredom Emergency Arcade based on the attached `index.html` and `REBUILD_RECIPE.md`. Create a genuinely playable, attractive interactive arcade (not an illustration or a list of ideas) with two rotating mini-games visible at a time, six fully implemented starter games with the exact mechanics described, replayable randomized variations, finite victory objectives for all six games and defeat conditions for the five games other than Angel's Memory Heist, and an explicit ability to request two new *playable* games through ChatGPT. Don't confuse requesting games from GPT-6 with permanently adding them to a standalone browser file. Preserve the ability to export/save the source. Interactive stories MUST end within a declared finite episode limit; no infinite three-choice recursion. Show me the working result and provide full source files for backup.

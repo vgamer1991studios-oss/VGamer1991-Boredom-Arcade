@@ -23,7 +23,7 @@ index.html, README.md, REBUILD_RECIPE.md and GAME_FACTORY_PROMPTS.md were preser
 | Sunshine Island Crisis Desk | Three proper fixes plus one cheap fix won at 10 stability; four cheap fixes lost at 4; proper fix disabled at zero budget | Play again restored six tokens and zero stability |
 | Honk Signal Memory | Repeated sequences of lengths 3, 4 and 5 to win; three wrong signals lost | Play again reset transmission and mistakes |
 
-Angel's Memory Heist intentionally has no normal loss condition or turn cap: its finite objective is four pairs. The other five games have explicit defeat paths. Replay is optional and starts a separate run.
+All six games have finite victory objectives. Angel's Memory Heist guarantees victory on matching all four pairs and allows unlimited attempts, with no normal loss condition or turn cap. Mismatches are counted but do not end the run. The other five games have explicit defeat paths. Replay is optional and starts a separate run.
 
 ## Shared controls and saves
 

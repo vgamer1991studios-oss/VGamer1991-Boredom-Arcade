@@ -13,9 +13,11 @@ The entire HTML, CSS and JavaScript source is included *inside `index.html`*. Us
 - Six fully playable games across three rotating pairs.
 - A **TWO DIFFERENT games** button cycles the pairs.
 - **Replay** restarts the selected game with a fresh randomized puzzle or scenario.
-- All games have explicit victory/defeat conditions. No unbounded story loops.
+- All six games have finite victory objectives; five also have explicit defeat conditions. No unbounded story loops.
 - Four ChatGPT expansion recipes, visible in the Game Factory area and separately stored in `GAME_FACTORY_PROMPTS.md`.
 - Automatic best-effort browser-local progress saves, plus manual **Export save** and **Import save** in JSON format.
+
+Angel's Memory Heist guarantees victory on completing its four-pair objective. It allows unlimited attempts, with no normal loss condition or turn cap; mismatches are counted but never end the run. See [play and verification notes](PLAY_AND_VERIFICATION.md) for the verified endings.
 
 ## Important: original ChatGPT Intelligent UI vs this file
 
@@ -46,7 +48,7 @@ Ask ChatGPT to create new playable games via a Game Factory prompt. To keep them
 
 ## What is and isn't preserved
 
-Preserved: game rules, themed text, working controls, full gameplay logic, data, victory/defeat conditions, replayability, game-factory prompt recipes, and a file you can back up.
+Preserved: game rules, themed text, working controls, full gameplay logic, data, finite victory objectives, the five games' explicit defeat conditions, replayability, game-factory prompt recipes, and a file you can back up.
 
 Not claimed: byte-identical capture of ChatGPT's platform runtime or private/internal system code; unexposed generated assets from earlier conversations; the ability to run GPT-6 in an offline browser.
 
